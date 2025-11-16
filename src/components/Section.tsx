@@ -8,18 +8,11 @@ type SectionProps = {
   children?: React.ReactNode;
 };
 
-const Section: React.FC<SectionProps> = ({
-  number,
-  bgColor,
-  textColor,
-  children,
-}) => {
+const Section: React.FC<SectionProps> = ({ number, children }) => {
   return (
-    <section
-      className={`section-${number}`}
-      style={{ backgroundColor: bgColor, color: textColor }}
-    >
+    <section className={`section section-${number}`}>
       <div className="section-content">{children}</div>
+      {/* <div>test</div> */}
     </section>
   );
 };

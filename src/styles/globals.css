@@ -16,3 +16,28 @@ body {
   overflow-x: hidden;
   background-color: rgb(212, 201, 201);
 }
+
+.color-black {
+  color: #222;
+}
+
+.color-white {
+  color: white;
+}
+
+.section-1 nav {
+  margin-bottom: 20rem;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.section-1 span {
+  font-size: 10rem;
+  /* font-size: 7rem; */
+  font-weight: 200;
+  line-height: 0.9;
+  position: relative;
+  will-change: transform;
+  overflow: visible;
+  display: flex;
+}

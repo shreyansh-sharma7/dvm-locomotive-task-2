@@ -1,0 +1,9 @@
+.parallax-line {
+  font-size: 7rem;
+  font-weight: 200;
+  line-height: 0.9;
+  position: relative;
+  will-change: transform;
+  overflow: visible;
+  display: flex;
+}
