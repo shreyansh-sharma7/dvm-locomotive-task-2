@@ -7,7 +7,6 @@ function App() {
   const [bgColor, setBgColor] = useState("rgb(212,201,201)");
 
   useEffect(() => {
-    console.log("meow");
     const colors = [
       [212, 201, 201],
       [212, 212, 201],
@@ -43,12 +42,14 @@ function App() {
 
   return (
     <div className="" style={{ backgroundColor: bgColor }}>
-      <Section title="Section 1" bgColor="transparent" textColor="#fff" />
-      <Section title="Section 2" bgColor="transparent" textColor="#fff" />
-      <Section title="Section 3" bgColor="transparent" textColor="#fff" />
-      <Section title="Section 4" bgColor="transparent" textColor="#fff" />
-      <Section title="Section 5" bgColor="transparent" textColor="#fff" />
-      <Section title="Section 6" bgColor="transparent" textColor="#fff" />
+      <Section number={1} bgColor="transparent" textColor="#fff">
+        <nav></nav>
+      </Section>
+      <Section number={2} bgColor="transparent" textColor="#fff" />
+      <Section number={3} bgColor="transparent" textColor="#fff" />
+      <Section number={4} bgColor="transparent" textColor="#fff" />
+      <Section number={5} bgColor="transparent" textColor="#fff" />
+      <Section number={6} bgColor="transparent" textColor="#fff" />
     </div>
   );
 }
