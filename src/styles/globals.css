@@ -26,13 +26,14 @@ body {
 }
 
 .section-1 nav {
-  margin-bottom: 20rem;
-  font-size: 1.3rem;
+  margin-bottom: 15rem;
+  font-size: 1.5rem;
   font-weight: 900;
 }
 
-.section-1 span {
-  font-size: 10rem;
+.section-1 span,
+.section-6 span {
+  font-size: 13rem;
   /* font-size: 7rem; */
   font-weight: 200;
   line-height: 0.9;
@@ -40,4 +41,25 @@ body {
   will-change: transform;
   overflow: visible;
   display: flex;
+}
+
+::selection {
+  color: white;
+  background-color: #272727;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #272727;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  margin-top: 1.4rem;
+}
+
+.section-6 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }

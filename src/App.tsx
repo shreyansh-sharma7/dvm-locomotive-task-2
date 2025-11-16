@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// @ts-ignore: missing type declarations for the JS component
 import Section from "./components/Section.tsx";
 import "./styles/globals.css";
 import Parallax from "./components/Parallax.tsx";
@@ -42,58 +41,69 @@ function App() {
   }, []);
 
   return (
-    <div className="" style={{ backgroundColor: bgColor }}>
-      {/* <Section number={0} bgColor="transparent" textColor="#fff"></Section> */}
+    <div style={{ backgroundColor: bgColor }}>
       <Section number={1} bgColor="transparent" textColor="#fff">
-        <div style={{}}>
-          <nav
-            className="color-black"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
-          >
-            <Parallax direction="x" speed={0.5}>
-              <div>LOCOMOTIVE.CA</div>
-            </Parallax>
-            <Parallax direction="x" speed={-0.5}>
-              <div>V4.X</div>
-            </Parallax>
-          </nav>
-          <Parallax speed={-0.075}>
-            <span className="color-black">LOCOMOTIVE</span>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+        >
+          <Parallax speedX={0.2} speedY={0.8}>
+            <div>LOCOMOTIVE.CA</div>
           </Parallax>
 
-          <Parallax speed={-0.03}>
-            <span className="color-black">SCROLL</span>
+          <Parallax speedX={-0.2} speedY={0.8}>
+            <div>V4.X – EDITION</div>
+          </Parallax>
+        </nav>
+
+        <Parallax speedX={0} speedY={-0.075}>
+          <span className="color-black">LOCOMOTIVE</span>
+        </Parallax>
+
+        <Parallax speedX={0} speedY={-0.03}>
+          <span className="color-black">SCROLL</span>
+        </Parallax>
+
+        <div style={{ display: "flex", color: "white" }}>
+          <Parallax speedX={0} speedY={-0.05}>
+            <span>V</span>
           </Parallax>
 
-          {/* <Parallax speed={1}> */}
-          <div style={{ display: "flex", color: "white" }}>
-            <Parallax speed={-0.05}>
-              <span>V</span>
-            </Parallax>
-            <Parallax speed={-0.2}>
-              <span>4</span>
-            </Parallax>
-            <Parallax speed={-0.01}>
-              <span>.</span>
-            </Parallax>
-            <Parallax speed={-0.1}>
-              <span>X</span>
-            </Parallax>
-            {/* </Parallax> */}
-          </div>
+          <Parallax speedX={0} speedY={-0.2}>
+            <span>4</span>
+          </Parallax>
+
+          <Parallax speedX={0} speedY={-0.01}>
+            <span>.</span>
+          </Parallax>
+
+          <Parallax speedX={0} speedY={-0.1}>
+            <span>X</span>
+          </Parallax>
         </div>
+
+        {/* <svg role="img">
+          <use xlink:href="dist/images/sprite.svg#logo"></use>
+        </svg> */}
+        <hr></hr>
       </Section>
+
       <Section number={2} bgColor="transparent" textColor="#fff">
         Test
       </Section>
+
       <Section number={3} bgColor="transparent" textColor="#fff" />
       <Section number={4} bgColor="transparent" textColor="#fff" />
       <Section number={5} bgColor="transparent" textColor="#fff" />
-      <Section number={6} bgColor="transparent" textColor="#fff" />
+      <Section number={6} bgColor="transparent" textColor="#fff">
+        <span className="color-black">DAMN</span>
+        <span className="color-black">YOU REALLY</span>
+        <span className="color-black">LIKE TO</span>
+        <span className="color-white">SCROLL</span>
+      </Section>
     </div>
   );
 }

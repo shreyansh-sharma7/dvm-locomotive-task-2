@@ -1,20 +1,16 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import "../styles/parallax.css";
-/**
- * <Parallax speed={number}>children</Parallax>
- * A simple universal parallax wrapper.
- * Speed range recommended: -1 to 1
- */
+
 export function Parallax({
-  speed = 1,
-  direction = "y",
+  speedX = 0,
+  speedY = 0,
   children,
 }: {
-  speed?: number;
-  direction?: "x" | "y";
+  speedX?: number;
+  speedY?: number;
   children?: ReactNode;
 }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,18 +18,21 @@ export function Parallax({
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
 
-      // Move wrapper
-      el.style.transform = `translate${direction}(${scrollY * speed}px)`;
+      const x = scrollY * speedX;
+      const y = scrollY * speedY;
+
+      el.style.transform = `translate(${x}px, ${y}px)`;
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [speed]);
+  }, [speedX, speedY]);
 
   return (
-    <div ref={ref} className="" style={{ willChange: "transform" }}>
+    <div ref={ref} style={{ willChange: "transform" }}>
       {children}
     </div>
   );
