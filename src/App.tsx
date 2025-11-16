@@ -92,12 +92,19 @@ function App() {
       </Section>
 
       <Section number={2} bgColor="transparent" textColor="#fff">
-        Test
+        <Parallax speedX={0.1}>Test</Parallax>
       </Section>
 
       <Section number={3} bgColor="transparent" textColor="#fff" />
       <Section number={4} bgColor="transparent" textColor="#fff" />
-      <Section number={5} bgColor="transparent" textColor="#fff" />
+      <Section number={5} bgColor="transparent" textColor="#fff">
+        <Parallax speedX={0.1}>
+          <div>🚂</div>
+        </Parallax>
+        <Parallax speedX={-0.1}>
+          <div>🚂</div>
+        </Parallax>
+      </Section>
       <Section number={6} bgColor="transparent" textColor="#fff">
         <span className="color-black">DAMN</span>
         <span className="color-black">YOU REALLY</span>

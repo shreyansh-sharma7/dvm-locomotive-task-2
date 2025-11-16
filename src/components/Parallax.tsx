@@ -1,5 +1,4 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import "../styles/parallax.css";
 
 export function Parallax({
   speedX = 0,
@@ -17,11 +16,14 @@ export function Parallax({
     if (!el) return;
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollX = window.scrollX;
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
 
-      const x = scrollY * speedX;
-      const y = scrollY * speedY;
+      // local scroll relative to THIS element
+      const localScroll = viewportHeight - rect.top;
+
+      const x = localScroll * speedX;
+      const y = localScroll * speedY;
 
       el.style.transform = `translate(${x}px, ${y}px)`;
     };
